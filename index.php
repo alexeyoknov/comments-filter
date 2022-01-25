@@ -24,7 +24,7 @@
     </div>
 <?
     include "./dbconnection.php";
-    if (isset($_POST["search"])&& strlen($_POST["search"])<=3)
+    if (isset($_POST["search"])&& strlen($_POST["search"])<3)
     {
         ?>
         <div class="alert alert-danger" role="alert">
