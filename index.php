@@ -44,7 +44,7 @@
 
         $query = "SELECT title, post_id, body FROM " . $dbname . ".comments "
             . "JOIN ". $dbname . ".posts USING(post_id) "
-            . "WHERE body LIKE '%" . $_POST["search"] . "%'";
+            . "WHERE body LIKE '%" . mysqli_real_escape_string($mysqli, $_POST["search"]) . "%'";
 
         $queryResult = $mysqli->query($query);
         if ($queryResult === false) {
